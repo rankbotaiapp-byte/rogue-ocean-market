@@ -107,6 +107,18 @@
         </button>
       </section>`;
     },
+    bannerStrips: () => {
+      const strips = cfg.content.bannerStrips;
+      if (!strips || !strips.length) return "";
+      return strips.map(s => `
+      <section class="banner-strip" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('${s.image}');">
+        <div class="banner-strip-inner">
+          <h2 class="banner-strip-head">${s.headline || ""}</h2>
+          ${s.subtext ? `<p class="banner-strip-sub">${s.subtext}</p>` : ""}
+          ${s.button ? `<a class="banner-strip-btn" href="${s.button.link || '#'}">${s.button.label}</a>` : ""}
+        </div>
+      </section>`).join("");
+    },
     stats: () => {
       const s = cfg.content.stats;
       if (!s || !s.length) return "";
