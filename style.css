@@ -940,6 +940,66 @@ h2 { color: var(--accent); margin-bottom: 1rem; display: flex; align-items: cent
   .photo-border { opacity: 0.12; }
 }
 
+/* ====================== ITEM PHOTO LIGHTBOX ====================== */
+.card-has-img { cursor: pointer; transition: border-color .2s; }
+.card-has-img:active { border-color: var(--accent); }
+.card-view-photo {
+  margin-top: .5rem;
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .78rem;
+  color: var(--accent);
+  opacity: .85;
+}
+.item-photo-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0,0,0,.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.item-photo-box {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--neon);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 40px -8px var(--neon);
+}
+.item-photo-box img {
+  width: 100%;
+  display: block;
+  max-height: 60vh;
+  object-fit: cover;
+}
+.item-photo-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.2rem;
+}
+.item-photo-caption strong { font-size: 1.1rem; color: #fff; }
+.item-photo-caption span { color: var(--accent); font-weight: 800; }
+.item-photo-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,.6);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .sea-creature, .bubble, .ocean-scene::before { animation: none; }
   .octopus, .crab { display: none; }
