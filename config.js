@@ -19,7 +19,12 @@ window.APP_CONFIG = {
     primary: "#0B5563",
     accent: "#F4A300",
     theme: "ocean",
-    neon: { on: true, color: "match", width: 3 }
+    neon: { on: true, color: "match", width: 3 },
+    borderImages: [
+      "crab.jpg",
+      "fishsandwitch.jpg",
+      "tacos.jpg"
+    ]
   },
 
   modules: {
