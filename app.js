@@ -553,6 +553,24 @@
       setInterval(fireFakeLead, 14000);
     }, 6000);
   })();
+
+  /* ====================== PHOTO BORDER FRAME ====================== */
+  (function () {
+    const imgs = cfg.branding.borderImages;
+    if (!imgs || !imgs.length) return;
+
+    const frame = document.createElement("div");
+    frame.className = "photo-border";
+
+    const tileCount = 24;
+    for (let i = 0; i < tileCount; i++) {
+      const tile = document.createElement("div");
+      tile.className = "border-tile";
+      tile.style.backgroundImage = `url('${imgs[i % imgs.length]}')`;
+      frame.appendChild(tile);
+    }
+    document.body.appendChild(frame);
+  })();
   /* ====================== UNDERWATER OCEAN SCENE ====================== */
   (function () {
     if (cfg.branding.theme !== "ocean") return;
