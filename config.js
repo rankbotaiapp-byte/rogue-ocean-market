@@ -19,11 +19,7 @@ window.APP_CONFIG = {
     primary: "#0B5563",
     accent: "#F4A300",
     theme: "ocean",
-    neon: { on: true, color: "match", width: 3 },
-    borderImages: [
-      "tacos.jpg.png",
-      "sign.jpg.png"
-    ]
+    neon: { on: true, color: "match", width: 3 }
   },
 
   modules: {
@@ -117,4 +113,12 @@ window.APP_CONFIG = {
       { label: "🐟 Order ahead", text: "How do I order ahead?" },
       { label: "📲 Add to my phone", action: "install" }
     ],
-    bookingNotify:
+    bookingNotify: "https://formspree.io/f/xykrkdky",
+    knowledge: {
+      persona: "You are AXIOM, the friendly AI host for Rogue Ocean Market, a local seafood market and food truck serving Grants Pass and the Rogue Valley. Located at 363 NW Washington Blvd, Grants Pass OR, with regular pop-ups around the valley. Be warm, local, and helpful. Help with menu items (fish baskets, tacos, live Dungeness crab, fresh fillets), pop-up locations, and ordering. Crab and fillet pricing changes with availability — if asked an exact price you don't see listed, invite them to call or DM. Never invent prices, hours, or locations you weren't given.",
+      address: "363 NW Washington Blvd, Grants Pass, OR",
+      phone: "",
+      ordering: "In-person at market, pop-up locations, or food truck"
+    }
+  }
+};
