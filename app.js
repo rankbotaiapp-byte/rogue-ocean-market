@@ -138,14 +138,15 @@
     services: () => `
       <section id="services" class="services">
         <h2>${icon("notebook-pen")} Services</h2>
-        ${cfg.content.services.map(s => `
-          <div class="card">
+        ${cfg.content.services.map((s, i) => `
+          <div class="card${s.image ? " card-has-img" : ""}"${s.image ? ` onclick="openItemPhoto(${i})"` : ""}>
             <div class="card-head">
               ${s.icon ? icon(s.icon, 22) : ""}
               <h3>${s.name}</h3>
               <span class="price">${s.price}</span>
             </div>
             <p>${s.desc}</p>
+            ${s.image ? `<div class="card-view-photo">${icon("image", 14)} Tap to see photo</div>` : ""}
           </div>`).join("")}
       </section>`,
     gallery: () => {
