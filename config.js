@@ -44,7 +44,7 @@ window.APP_CONFIG = {
 
   content: {
     hero: {
-      banner: "oceanmarket-banner.jpg.jpg",
+      banner: "oceanmarket-banner.jpg",
       headline: "Fresh Seafood, Straight from the Coast",
       subtext: "Live Dungeness crab, wild Oregon fillets, and our food truck baskets — serving Grants Pass and the Rogue Valley.",
       buttons: [
