@@ -553,5 +553,76 @@
       setInterval(fireFakeLead, 14000);
     }, 6000);
   })();
+  /* ====================== UNDERWATER OCEAN SCENE ====================== */
+  (function () {
+    if (cfg.branding.theme !== "ocean") return;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const scene = document.createElement("div");
+    scene.className = "ocean-scene";
+    document.body.appendChild(scene);
+
+    const fishSVG = (color) => `
+      <svg viewBox="0 0 60 30" width="52" height="26" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="26" cy="15" rx="20" ry="9" fill="${color}"/>
+        <polygon points="6,15 -4,7 -4,23" fill="${color}"/>
+        <circle cx="38" cy="12" r="2.4" fill="#0a1520"/>
+        <path d="M20 8 Q26 2 34 8" stroke="rgba(255,255,255,.4)" stroke-width="1.5" fill="none"/>
+      </svg>`;
+
+    const octoSVG = `
+      <svg viewBox="0 0 80 90" width="70" height="79" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="40" cy="30" rx="26" ry="24" fill="#b5568c"/>
+        <circle cx="30" cy="26" r="4.5" fill="#fff"/><circle cx="30" cy="27" r="2.2" fill="#111"/>
+        <circle cx="50" cy="26" r="4.5" fill="#fff"/><circle cx="50" cy="27" r="2.2" fill="#111"/>
+        <g fill="#a04a7d">
+          <rect class="tentacle" x="16" y="48" width="6" height="34" rx="3"/>
+          <rect class="tentacle" x="26" y="50" width="6" height="38" rx="3"/>
+          <rect class="tentacle" x="37" y="51" width="6" height="39" rx="3"/>
+          <rect class="tentacle" x="48" y="50" width="6" height="38" rx="3"/>
+          <rect class="tentacle" x="58" y="48" width="6" height="34" rx="3"/>
+        </g>
+      </svg>`;
+
+    const crabSVG = `
+      <svg viewBox="0 0 70 40" width="58" height="33" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="35" cy="24" rx="20" ry="12" fill="#e0552d"/>
+        <circle cx="28" cy="18" r="3" fill="#fff"/><circle cx="28" cy="18" r="1.5" fill="#111"/>
+        <circle cx="42" cy="18" r="3" fill="#fff"/><circle cx="42" cy="18" r="1.5" fill="#111"/>
+        <g stroke="#e0552d" stroke-width="3" fill="none">
+          <path d="M16 28 L6 34"/><path d="M18 24 L4 24"/>
+          <path d="M54 28 L64 34"/><path d="M52 24 L66 24"/>
+        </g>
+        <path class="claw" d="M12 20 q-8 -4 -12 2 q6 2 12 2 z" fill="#c9481f"/>
+        <path class="claw" d="M58 20 q8 -4 12 2 q-6 2 -12 2 z" fill="#c9481f"/>
+      </svg>`;
+
+    function addCreature(html, cls, topVh) {
+      const el = document.createElement("div");
+      el.className = "sea-creature " + cls;
+      el.style.top = topVh + "vh";
+      el.innerHTML = html;
+      scene.appendChild(el);
+    }
+
+    addCreature(fishSVG("#7fd4e0"), "fish-a", 22);
+    addCreature(fishSVG("#f2b45a"), "fish-b", 45);
+    addCreature(fishSVG("#8fa9e0"), "fish-c", 68);
+    addCreature(octoSVG, "octopus", 0);
+    addCreature(crabSVG, "crab", 0);
+
+    function spawnBubble() {
+      const b = document.createElement("div");
+      b.className = "bubble";
+      const size = Math.random() * 12 + 6;
+      b.style.width = size + "px";
+      b.style.height = size + "px";
+      b.style.left = (Math.random() * 96 + 2) + "vw";
+      b.style.animationDuration = (Math.random() * 5 + 7) + "s";
+      scene.appendChild(b);
+      setTimeout(() => b.remove(), 13000);
+    }
+    setInterval(() => { if (Math.random() > 0.4) spawnBubble(); }, 1400);
+  })();
 
 })();
