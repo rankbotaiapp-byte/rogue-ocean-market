@@ -77,13 +77,34 @@
       const btns = (h.buttons || []).map(b =>
         `<a class="hero-btn" href="${b.link || '#'}">${b.icon ? icon(b.icon) : ""} ${b.label}</a>`
       ).join("");
+      const bannerStyle = h.banner
+        ? ` style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.65)), url('${h.banner}'); background-size: cover; background-position: center;"`
+        : "";
+      const bannerClass = h.banner ? " hero-has-banner" : "";
       return `
-      <section class="hero-premium">
+      <section class="hero-premium${bannerClass}"${bannerStyle}>
         <div class="hero-inner">
           <h2 class="hero-headline">${h.headline || cfg.business.tagline || ""}</h2>
           <p class="hero-sub">${h.subtext || ""}</p>
           <div class="hero-btns">${btns}</div>
         </div>
+      </section>`;
+    },
+    axiomIntro: () => {
+      const a = cfg.content.axiomIntro;
+      if (!a) return "";
+      const points = (a.points || []).map(p =>
+        `<div class="axiom-point">${icon(p.icon || "check-circle", 20)}<span>${p.text}</span></div>`
+      ).join("");
+      return `
+      <section class="axiom-intro">
+        <div class="axiom-intro-badge">${icon("sparkles", 18)} Powered by AXIOM</div>
+        <h2 class="axiom-intro-head">${a.heading || "Meet AXIOM — Your 24/7 Receptionist"}</h2>
+        <p class="axiom-intro-sub">${a.subtext || ""}</p>
+        <div class="axiom-points">${points}</div>
+        <button class="axiom-intro-cta" onclick="document.getElementById('orb').click()">
+          ${icon("message-circle", 18)} Talk to AXIOM now
+        </button>
       </section>`;
     },
     stats: () => {
