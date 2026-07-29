@@ -21,9 +21,9 @@ window.APP_CONFIG = {
     theme: "ocean",
     neon: { on: true, color: "match", width: 3 },
     borderImages: [
-      "crab.jpg",
-      "fishsandwitch.jpg",
-      "tacos.jpg"
+      borderImages: [
+      "tacos.jpg.png",
+      "sign.jpg.png"
     ]
   },
 
