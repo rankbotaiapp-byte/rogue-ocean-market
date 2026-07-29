@@ -12,7 +12,7 @@ window.APP_CONFIG = {
     tagline: "The Freshest Seafood in Grants Pass & the Rogue Valley",
     phone: "",
     email: "",
-    logo: "axiommaster3.webp"
+    logo: ""
   },
 
   branding: {
