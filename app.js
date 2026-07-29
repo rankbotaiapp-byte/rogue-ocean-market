@@ -652,5 +652,27 @@
     }
     setInterval(() => { if (Math.random() > 0.25) spawnBubble(); }, 1400);
   })();
+  /* ====================== ITEM PHOTO LIGHTBOX ====================== */
+  window.openItemPhoto = function (i) {
+    const item = cfg.content.services[i];
+    if (!item || !item.image) return;
+    const overlay = document.createElement("div");
+    overlay.className = "item-photo-overlay";
+    overlay.innerHTML = `
+      <div class="item-photo-box">
+        <img src="${item.image}" alt="${item.name}">
+        <div class="item-photo-caption">
+          <strong>${item.name}</strong>
+          ${item.price ? `<span>${item.price}</span>` : ""}
+        </div>
+        <button class="item-photo-close" aria-label="Close">✕</button>
+      </div>`;
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay || e.target.classList.contains("item-photo-close")) {
+        overlay.remove();
+      }
+    });
+    document.body.appendChild(overlay);
+  };
 
 })();
