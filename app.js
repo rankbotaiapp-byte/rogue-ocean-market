@@ -623,10 +623,7 @@
       scene.appendChild(el);
     }
 
-    addCreature(fishSVG("#7fd4e0"), "fish-a", 22);
-    addCreature(fishSVG("#f2b45a"), "fish-b", 45);
-    addCreature(fishSVG("#8fa9e0"), "fish-c", 68);
-    addCreature(octoSVG, "octopus", 0);
+    
     addCreature(crabSVG, "crab", 0);
 
     function spawnBubble() {
@@ -640,7 +637,7 @@
       scene.appendChild(b);
       setTimeout(() => b.remove(), 13000);
     }
-    setInterval(() => { if (Math.random() > 0.4) spawnBubble(); }, 1400);
+    setInterval(() => { if (Math.random() > 0.25) spawnBubble(); }, 1400);
   })();
 
 })();
