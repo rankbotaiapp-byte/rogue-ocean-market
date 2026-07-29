@@ -25,6 +25,7 @@ window.APP_CONFIG = {
   modules: {
     hero: true,
     axiomIntro: true,
+    bannerStrips: true,
     services: true,
     about: true,
     contact: true,
@@ -47,6 +48,14 @@ window.APP_CONFIG = {
         { label: "Order Ahead", icon: "shopping-bag", link: "#book" }
       ]
     },
+
+    bannerStrips: [
+      {
+        image: "tacos.jpg.png",
+        headline: "Try Our Surf N' Turf Tacos",
+        subtext: "A local favorite you won't forget."
+      }
+    ],
 
     axiomIntro: {
       heading: "Meet AXIOM — Your 24/7 Receptionist",
