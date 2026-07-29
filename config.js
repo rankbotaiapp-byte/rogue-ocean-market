@@ -72,7 +72,7 @@ window.APP_CONFIG = {
       { name: "Halibut Basket", price: "$26", icon: "fish", desc: "Wild Alaskan halibut, beer-battered & deep fried, comes with fries." },
       { name: "Salmon Basket", price: "$23", icon: "fish", desc: "Oregon Coast king salmon, beer-battered & deep fried, comes with fries." },
       { name: "Rockfish Basket", price: "$17", icon: "fish", desc: "Classic fish & chips — flaky rockfish, comes with fries." },
-      { name: "Fried Shrimp Tacos", price: "$17", icon: "utensils", desc: "Crispy beer-battered shrimp tacos, set of 3." },
+      { name: "Fried Shrimp Tacos", price: "$17", icon: "utensils", image: "tacos.jpg.png", desc: "Crispy beer-battered shrimp tacos, set of 3." },
       { name: "King Salmon Tacos", price: "$15", icon: "utensils", desc: "Grilled Oregon Coast salmon, set of 3 with pineapple slaw." },
       { name: "Live Dungeness Crab", price: "Ask", icon: "shell", desc: "Fresh live Dungeness crab — call or DM for current pricing." },
       { name: "Fresh Fillets", price: "Ask", icon: "fish", desc: "Halibut, sablefish, albacore tuna, oysters — blast-frozen fillets available." }
