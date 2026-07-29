@@ -17,32 +17,45 @@ window.APP_CONFIG = {
 
   branding: {
     primary: "#0B5563",
-    accent: "#F26B3A",
+    accent: "#F4A300",
     theme: "ocean",
     neon: { on: true, color: "match", width: 3 }
   },
 
   modules: {
     hero: true,
-    stats: false,
+    axiomIntro: true,
     services: true,
-    hours: false,
-    reviews: false,
     about: true,
     contact: true,
     bookingForm: true,
     nav: true,
-    faq: false,
-    gallery: false
+    stats: false,
+    hours: false,
+    reviews: false,
+    gallery: false,
+    faq: false
   },
 
   content: {
     hero: {
+      banner: "banner.jpg",
       headline: "Fresh Seafood, Straight from the Coast",
       subtext: "Live Dungeness crab, wild Oregon fillets, and our food truck baskets — serving Grants Pass and the Rogue Valley.",
       buttons: [
         { label: "See What's Fresh", icon: "fish", link: "#services" },
         { label: "Order Ahead", icon: "shopping-bag", link: "#book" }
+      ]
+    },
+
+    axiomIntro: {
+      heading: "Meet AXIOM — Your 24/7 Receptionist",
+      subtext: "AXIOM is the AI employee that never sleeps. It answers customers, takes bookings, and captures every lead — even at 2am when you're closed.",
+      points: [
+        { icon: "clock", text: "Answers customers 24/7, even after hours" },
+        { icon: "calendar-check", text: "Takes orders and bookings automatically" },
+        { icon: "bell", text: "Sends every new lead straight to your phone" },
+        { icon: "trending-up", text: "Turns missed calls into real revenue" }
       ]
     },
 
@@ -72,22 +85,28 @@ window.APP_CONFIG = {
     endpoint: "https://formspree.io/f/xykrkdky"
   },
 
+  demoLeads: [
+    { name: "Jenna T.", phone: "(541) 555-0148", msg: "Do you have crab this weekend?", secs: "1.1" },
+    { name: "Marcus D.", phone: "(541) 555-0291", msg: "Want to order 2 halibut baskets", secs: "0.7" },
+    { name: "Tara P.", phone: "(541) 555-0333", msg: "Where's the truck today?", secs: "0.9" }
+  ],
+
   orb: {
     on: true,
     label: "AXIOM",
     teaser: {
       delay: 2500,
       messages: [
-        "📲 Tap AXIOM to add us to your home screen",
+        "👋 I'm AXIOM — I book customers for Rogue Ocean 24/7",
         "🦀 Ask me what's fresh today",
         "📍 Find our next pop-up location",
-        "✨ This app works offline too"
+        "📲 Tap to add this app to your phone"
       ]
     }
   },
 
   reception: {
-    greeting: "Welcome to Rogue Ocean Market! Want to know what seafood is fresh today, where to find us, or how to order?",
+    greeting: "Welcome to Rogue Ocean Market! I'm AXIOM. Want to know what seafood is fresh today, where to find us, or how to order?",
     quickButtons: [
       { label: "🦀 What's fresh today?", text: "What seafood do you have today?" },
       { label: "📍 Where are you?", text: "Where are you located?" },
@@ -96,7 +115,7 @@ window.APP_CONFIG = {
     ],
     bookingNotify: "https://formspree.io/f/xykrkdky",
     knowledge: {
-      persona: "You are the friendly AI host for Rogue Ocean Market, a local seafood market and food truck serving Grants Pass and the Rogue Valley. Located at 363 NW Washington Blvd, Grants Pass OR, with regular pop-ups around the valley. Be warm, local, and helpful. Help with menu items (fish baskets, tacos, live Dungeness crab, fresh fillets), pop-up locations, and ordering. Crab and fillet pricing changes with availability — if asked an exact price you don't see listed, invite them to call or DM. Never invent prices, hours, or locations you weren't given.",
+      persona: "You are AXIOM, the friendly AI host for Rogue Ocean Market, a local seafood market and food truck serving Grants Pass and the Rogue Valley. Located at 363 NW Washington Blvd, Grants Pass OR, with regular pop-ups around the valley. Be warm, local, and helpful. Help with menu items (fish baskets, tacos, live Dungeness crab, fresh fillets), pop-up locations, and ordering. Crab and fillet pricing changes with availability — if asked an exact price you don't see listed, invite them to call or DM. Never invent prices, hours, or locations you weren't given.",
       address: "363 NW Washington Blvd, Grants Pass, OR",
       phone: "",
       ordering: "In-person at market, pop-up locations, or food truck"
